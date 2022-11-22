@@ -1,0 +1,36 @@
+<div th:replace="compartilhado/top"></div>
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Nova Noticia</h1>
+        <p class="mb-4">
+            Aqui iremos cadastrar uma nova noticia
+        </p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4" style="padding: 30px;">
+            <form method="POST" action="/noticias/criar" onsubmit="return confirm('Confirma ação')">
+            	<div class="form-group mb-3">
+				    <label for="categoria">Selecionar tipo de noticía</label>
+					    <select class="form-control" required id="categoria" name="categoria">
+					      <option>ESPORTE</option>
+					      <option>POLITICA</option>
+					      <option>TECNOLOGIA</option>
+					    </select>
+		  		</div>
+                <div class="form-group">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" class="form-control" required id="titulo" name="titulo" placeholder="Digite o Titulo">
+                </div>
+                <div class="form-group">
+                    <label for="texto">Conteúdo da noticia</label>
+                    <textarea class="form-control" id="texto" name="texto" placeholder="Digite a noticia"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+<div th:replace="compartilhado/baixo"></div>

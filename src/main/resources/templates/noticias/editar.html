@@ -1,0 +1,28 @@
+<div th:replace="compartilhado/top"></div>
+    <!-- Begin Page Content -->
+    <div class="container-fluid">
+
+        <!-- Page Heading -->
+        <h1 class="h3 mb-2 text-gray-800">Edição de Administrador</h1>
+        <p class="mb-4">
+            Aqui iremos editar o administrador
+        </p>
+
+        <!-- DataTales Example -->
+        <div class="card shadow mb-4" style="padding: 30px;">
+            <form method="POST" th:action="@{'/noticias/' + ${noticia?.id} + '/atualizar'}">
+                <div class="form-group">
+                    <label for="titulo">Titulo</label>
+                    <input type="text" class="form-control" th:value="${noticia?.titulo}" required id="titulo" name="titulo" placeholder="Digite o seu nome">
+                </div>
+                <div class="form-group">
+                    <label for="texto">Observação</label>
+                    <textarea class="form-control" id="texto" name="texto" placeholder="Digite o seu observação" th:inline="text">[[${noticia.texto}]]</textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+
+    </div>
+    <!-- /.container-fluid -->
+<div th:replace="compartilhado/baixo"></div>
